@@ -31,7 +31,7 @@ def generate(sentence,filename="morse.wav",unit_length=0.1,f=440.0,volume=0.5,fs
     data *= volume
     scaled = np.int16(data/np.max(np.abs(data)) * 32767)
 
-    write('morse.wav',44100,scaled)
+    write('morse.wav', fs, scaled)
 
 def ascii_to_morse(text):
     """
